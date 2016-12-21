@@ -2,6 +2,7 @@ package zk
 
 import (
 	"errors"
+	"strconv"
 )
 
 const (
@@ -92,7 +93,7 @@ func (s State) String() string {
 	if name := stateNames[s]; name != "" {
 		return name
 	}
-	return "Unknown"
+	return "Unknown-" + strconv.Itoa(int(s))
 }
 
 type ErrCode int32
